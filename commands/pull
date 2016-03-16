@@ -1,0 +1,6 @@
+#!/bin/bash
+# Pull all the images down from Docker hub.
+readonly DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+for image_path in $DIR/../images/*; do
+    docker pull islandora-claw/${image_path##*/}
+done

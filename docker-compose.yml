@@ -1,0 +1,55 @@
+mariadb:
+  image: islandora-claw/mariadb
+  env_file: env_files/mariadb.env
+  ports:
+    - "3306:3306"
+
+fedora:
+  image: islandora-claw/fedora
+  env_file: env_files/fedora.env
+  volumes:
+    - "/mvn/fedora-data"
+  ports:
+    - "8080:8080"
+
+blazegraph:
+  image: islandora-claw/blazegraph
+  env_file: env_files/blazegraph.env
+  volumes:
+    - "/opt/blazegraph"
+  ports:
+    - "8081:8080"
+
+solr:
+  image: islandora-claw/solr
+  env_file: env_files/solr.env
+  volumes:
+    - "/opt/solr/collection1/data"
+  ports:
+    - "8082:8080"
+
+karaf:
+  image: islandora-claw/islandora-karaf-components
+  env_file: env_files/karaf.env
+  volumes:
+    - "/opt/karaf/data"
+  ports:
+    - "8181:8181"
+  links:
+    - drupal:drupal
+    - fedora:fedora
+    - blazegraph:blazegraph
+
+drupal:
+  image: islandora-claw/islandora
+  env_file: env_files/drupal.env
+  volumes:
+    -  "/var/www/localhost/htdocs/sites/default/files"
+  ports:
+    - "80:80"
+  links:
+    - mariadb:mysql
+    - solr:solr
+    - blazegraph:blazegraph
+    - fedora:fedora
+    - karaf:karaf

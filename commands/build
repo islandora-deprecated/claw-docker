@@ -1,0 +1,26 @@
+#!/bin/bash
+
+readonly ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+
+build() {
+  local image=$1
+  $ROOT/images/$image/commands/build
+}
+
+main() {
+  build base
+  build all-in-one &
+  build mariadb &
+  build drupal
+  build islandora
+  build oracle-jdk
+  build open-jdk
+  build maven
+  build karaf
+  build islandora-karaf-components
+  build tomcat
+  build blazegraph &
+  build solr &
+  build fedora &
+}
+main
