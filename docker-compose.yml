@@ -52,4 +52,3 @@ drupal:
     - solr:solr
     - blazegraph:blazegraph
     - fedora:fedora
-    - karaf:karaf
