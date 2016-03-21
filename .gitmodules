@@ -1,0 +1,42 @@
+[submodule "images/solr"]
+	path = images/solr
+	url = https://github.com/nigelgbanks/claw-docker-solr
+[submodule "images/all-in-one"]
+	path = images/all-in-one
+	url = https://github.com/nigelgbanks/claw-docker-all-in-one
+[submodule "images/base"]
+	path = images/base
+	url = https://github.com/nigelgbanks/claw-docker-base
+[submodule "images/blazegraph"]
+	path = images/blazegraph
+	url = https://github.com/nigelgbanks/claw-docker-blazegraph
+[submodule "images/drupal"]
+	path = images/drupal
+	url = https://github.com/nigelgbanks/claw-docker-drupal
+[submodule "images/fedora"]
+	path = images/fedora
+	url = https://github.com/nigelgbanks/claw-docker-fedora
+[submodule "images/islandora"]
+	path = images/islandora
+	url = https://github.com/nigelgbanks/claw-docker-islandora
+[submodule "images/islandora-karaf-components"]
+	path = images/islandora-karaf-components
+	url = https://github.com/nigelgbanks/claw-docker-islandora-karaf-components
+[submodule "images/karaf"]
+	path = images/karaf
+	url = https://github.com/nigelgbanks/claw-docker-karaf
+[submodule "images/mariadb"]
+	path = images/mariadb
+	url = https://github.com/nigelgbanks/claw-docker-mariadb
+[submodule "images/maven"]
+	path = images/maven
+	url = https://github.com/nigelgbanks/claw-docker-maven
+[submodule "images/open-jdk"]
+	path = images/open-jdk
+	url = https://github.com/nigelgbanks/claw-docker-open-jdk
+[submodule "images/oracle-jdk"]
+	path = images/oracle-jdk
+	url = https://github.com/nigelgbanks/claw-docker-oracle-jdk
+[submodule "images/tomcat"]
+	path = images/tomcat
+	url = https://github.com/nigelgbanks/claw-docker-tomcat
