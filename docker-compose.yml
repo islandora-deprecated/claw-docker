@@ -1,54 +1,76 @@
-mariadb:
-  image: islandora-claw/mariadb
-  env_file: env_files/mariadb.env
-  ports:
-    - "3306:3306"
+version: "2"
+services:
 
-fedora:
-  image: islandora-claw/fedora
-  env_file: env_files/fedora.env
-  volumes:
-    - "/mvn/fedora-data"
-  ports:
-    - "8080:8080"
+  # Un-comment to enable etcd as the back end for storing environment variables.
 
-blazegraph:
-  image: islandora-claw/blazegraph
-  env_file: env_files/blazegraph.env
-  volumes:
-    - "/opt/blazegraph"
-  ports:
-    - "8081:8080"
+  # etcd:
+  #   image: quay.io/coreos/etcd:v2.3.0
+  #   command: >
+  #     -listen-client-urls http://0.0.0.0:2379
+  #     -advertise-client-urls http://etcd:2379
+  #   ports:
+  #     - "2379:2379" 
 
-solr:
-  image: islandora-claw/solr
-  env_file: env_files/solr.env
-  volumes:
-    - "/opt/solr/collection1/data"
-  ports:
-    - "8082:8080"
+  # Registers each container as it's started in etcd, so it can be used as a
+  # prefix for storing configuration settings, also for Discovery in
+  # multi-network system.
 
-karaf:
-  image: islandora-claw/islandora-karaf-components
-  env_file: env_files/karaf.env
-  volumes:
-    - "/opt/karaf/data"
-  ports:
-    - "8181:8181"
-  links:
-    - drupal:drupal
-    - fedora:fedora
-    - blazegraph:blazegraph
+  # registrator:
+  #   image: gliderlabs/registrator
+  #   command: "etcd://etcd:2379"
+  #   volumes:
+  #     - "/var/run/docker.sock:/tmp/docker.sock"
+  #   links:
+  #     - etcd
 
-drupal:
-  image: islandora-claw/islandora
-  env_file: env_files/drupal.env
-  volumes:
-    -  "/var/www/localhost/htdocs/sites/default/files"
-  ports:
-    - "80:80"
-  links:
-    - mariadb:mysql
-    - solr:solr
-    - blazegraph:blazegraph
-    - fedora:fedora
+  mariadb:
+    image: islandora-claw/mariadb
+    env_file: env_files/mariadb.env
+    ports:
+      - "3306:3306"
+
+  fedora:
+    image: islandora-claw/fedora
+    env_file: env_files/fedora.env
+    volumes:
+      - "/mvn/fedora-data"
+    ports:
+      - "8080:8080"
+
+  blazegraph:
+    image: islandora-claw/blazegraph
+    env_file: env_files/blazegraph.env
+    volumes:
+      - "/opt/blazegraph"
+    ports:
+      - "8081:8080"
+
+  solr:
+    image: islandora-claw/solr
+    env_file: env_files/solr.env
+    volumes:
+      - "/opt/solr/collection1/data"
+    ports:
+      - "8082:8080"
+
+  karaf:
+    image: islandora-claw/islandora-karaf-components
+    env_file:
+      - env_files/karaf.env
+      - env_files/drupal.env
+    volumes:
+      - "/opt/karaf/data"
+    ports:
+      - "8181:8181"
+
+  drupal:
+    image: islandora-claw/islandora
+    env_file:
+      - env_files/drupal.env
+      - env_files/mariadb.env
+    volumes:
+      -  "/var/www/localhost/htdocs/sites/default/files"
+    ports:
+      - "80:80"
+    links:
+      - "mariadb:mysql" 
