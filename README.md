@@ -8,6 +8,9 @@ running all the [Docker] images that Islandora CLAW provides.
 Each image has it's own Git repository, they are included in this repository as
 sub-modules.
 
+You **must** run the command ```git submodule update --init --recursive``` after
+cloning this repository to fetch them.
+
 The [Docker] images can be found in the [images](/images) directory.
 
 If your new to Docker, please read though our
@@ -44,7 +47,8 @@ it comes to scaling Islandora.
 It's provided as a way to easily test and develop against Islandora, it's vastly
 easier to deploy and manipulate than the multiple container application.
 
-Visit the [repository](images/all-in-one) to learn more.
+Visit the [repository](https://github.com/islandora-claw/docker-all-in-one) to
+learn more.
 
 #### Multiple Container Application
 
@@ -62,7 +66,7 @@ servers. With this we could do massive ingests is on short time scales.
 Please read out [Multiple Container User Guide](/docs/docker-user-guide.md) to
 learn more.
 
-Also checkout our [Development Guide](docker-development.md) if you plan on
+Also checkout our [Development Guide](/docs/docker-development.md) if you plan on
 doing some development work.
 
 ### Commands
