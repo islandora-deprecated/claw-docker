@@ -29,12 +29,13 @@ See our [install guide](docs/install-guide.md) for more information.
 Assumes you have already setup and installed [Docker](https://docs.docker.com/engine/installation/) and [Docker Composer](https://docs.docker.com/compose/install/). If you are running this on your local machine, you may need to change the Drupal container port from 80 to 8000 in [`docker-compose.yml`](https://github.com/nigelgbanks/claw-docker/blob/master/docker-compose.yml#L74).
 
 1. `git clone https://github.com/nigelgbanks/claw-docker.git`
-2. `cd claw-docker/commands`
-3. `git submodule update --init --recursive`
-4. `cd commands`
-5. `./generate-env-files`
-6. `sudo ./build`
-7. `sudo docker-compose up`
+2. `cp example.docker-compose.yml docker-compose.yml` (edit `docker-compose.yml`)
+3. `cd claw-docker/commands`
+4. `git submodule update --init --recursive`
+5. `cd commands`
+6. `./generate-env-files`
+7. `sudo ./build`
+8. `sudo docker-compose up`
 
 ## Usage
 
