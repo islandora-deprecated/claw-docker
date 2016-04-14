@@ -5,3 +5,4 @@
 watch
 env_files
 vagrant
+docker-compose.yml
