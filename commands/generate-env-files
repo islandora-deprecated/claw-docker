@@ -6,7 +6,7 @@ set -e
 readonly ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 random_password() {
-    LC_CTYPE=C tr -dc _A-Za-z0-9 < /dev/urandom | head -c${1:-32}; echo;
+    LC_ALL=C tr -dc _A-Za-z0-9 < /dev/urandom | head -c${1:-32}; echo;
 }
 
 generate_mariadb_env_file() {
