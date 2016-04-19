@@ -52,7 +52,7 @@ This approach is **not** meant for production use, and has many limitations when
 
 It's provided as a way to easily test and develop against Islandora, it's vastly easier to deploy and manipulate than the multiple container application.
 
-Visit the [repository](https://github.com/islandora-claw/docker-all-in-one) to learn more.
+Visit the [repository](https://github.com/islandora/claw-docker-all-in-one) to learn more.
 
 ### Multiple Container Application
 

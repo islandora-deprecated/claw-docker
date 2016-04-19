@@ -24,13 +24,13 @@ services:
   #     - etcd
 
   mariadb:
-    image: islandora-claw/mariadb
+    image: islandora/claw-mariadb
     env_file: env_files/mariadb.env
     ports:
       - "3306:3306"
 
   fedora:
-    image: islandora-claw/fedora
+    image: islandora/claw-fedora
     env_file: env_files/fedora.env
     volumes:
       - "/mvn/fedora-data"
@@ -38,7 +38,7 @@ services:
       - "8080:8080"
 
   blazegraph:
-    image: islandora-claw/blazegraph
+    image: islandora/claw-blazegraph
     env_file: env_files/blazegraph.env
     volumes:
       - "/opt/blazegraph"
@@ -46,7 +46,7 @@ services:
       - "8081:8080"
 
   solr:
-    image: islandora-claw/solr
+    image: islandora/claw-solr
     env_file: env_files/solr.env
     volumes:
       - "/opt/solr/collection1/data"
@@ -54,7 +54,7 @@ services:
       - "8082:8080"
 
   karaf:
-    image: islandora-claw/islandora-karaf-components
+    image: islandora/claw-islandora-karaf-components
     env_file:
       - env_files/karaf.env
       - env_files/drupal.env
@@ -64,7 +64,7 @@ services:
       - "8181:8181"
 
   drupal:
-    image: islandora-claw/islandora
+    image: islandora/claw-islandora
     env_file:
       - env_files/drupal.env
       - env_files/mariadb.env
