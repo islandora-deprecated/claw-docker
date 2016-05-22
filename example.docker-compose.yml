@@ -1,4 +1,11 @@
 version: "2"
+volumes:
+  blazegraph:
+  drupal:
+  fedora:
+  karaf:
+  mariadb:
+  solr:
 services:
 
   # Un-comment to enable etcd as the back end for storing environment variables.
@@ -26,40 +33,42 @@ services:
   mariadb:
     image: islandora/claw-mariadb
     env_file: env_files/mariadb.env
+    volumes:
+      - "mariadb:/var/lib/mysql"
     ports:
       - "3306:3306"
 
   fedora:
-    image: islandora/claw-fedora
+    image: islandora/claw-fedora:open-jdk
     env_file: env_files/fedora.env
     volumes:
-      - "/mvn/fedora-data"
+      - "fedora:/mvn/fedora-data"
     ports:
       - "8080:8080"
 
   blazegraph:
-    image: islandora/claw-blazegraph
+    image: islandora/claw-blazegraph:open-jdk
     env_file: env_files/blazegraph.env
     volumes:
-      - "/opt/blazegraph"
+      - "blazegraph:/opt/blazegraph"
     ports:
       - "8081:8080"
 
   solr:
-    image: islandora/claw-solr
+    image: islandora/claw-solr:open-jdk
     env_file: env_files/solr.env
     volumes:
-      - "/opt/solr/collection1/data"
+      - "solr:/opt/solr/collection1/data"
     ports:
       - "8082:8080"
 
   karaf:
-    image: islandora/claw-islandora-karaf-components
+    image: islandora/claw-islandora-karaf-components:open-jdk
     env_file:
       - env_files/karaf.env
       - env_files/drupal.env
     volumes:
-      - "/opt/karaf/data"
+      - "karaf:/opt/karaf/data"
     ports:
       - "8181:8181"
 
@@ -69,7 +78,7 @@ services:
       - env_files/drupal.env
       - env_files/mariadb.env
     volumes:
-      -  "/var/www/localhost/htdocs/sites/default/files"
+      -  "drupal:/var/www/localhost/htdocs/sites/default/files"
     ports:
       - "80:80"
     links:
