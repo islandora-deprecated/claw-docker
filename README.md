@@ -31,8 +31,8 @@ See our [install guide](docs/install-guide.md) for more information.
 Assumes you have already setup and installed [Docker](https://docs.docker.com/engine/installation/) and [Docker Composer](https://docs.docker.com/compose/install/). If you are running this on your local machine, you may need to change the Drupal container port from 80 to 8000 in [`docker-compose.yml`](https://github.com/Islandora-CLAW/claw-docker/blob/master/docker-compose.yml#L74).
 
 1. `git clone https://github.com/Islandora-CLAW/claw-docker.git`
-2. `cp example.docker-compose.yml docker-compose.yml` (edit `docker-compose.yml`)
-3. `cd claw-docker/commands`
+2. `cd claw-docker`
+3. `cp example.docker-compose.yml docker-compose.yml` (edit `docker-compose.yml`)
 4. `git submodule update --init --recursive`
 5. `cd commands`
 6. `./generate-env-files`
