@@ -12,8 +12,7 @@ You **must** run the command ```git submodule update --init --recursive``` after
 
 The [Docker] images can be found in the [images](/images) directory.
 
-If your new to Docker, please read though our [overview](/docs/docker-overview.md), to get an idea of what Docker is all
-about.
+If your new to Docker, please read though our [overview](/docs/docker-overview.md), to get an idea of what Docker is all about.
 
 ## Dependencies
 
@@ -112,15 +111,16 @@ https://github.com/docker/docker/issues/18180#issuecomment-187583209
 * American Philosophical Society
 * common media inc.
 
-Current maintainers:
+## Maintainers
 
 * [Nigel Banks](https://github.com/nigelgbanks)
+* [Nick Ruest](https://github.com/ruebot)
 
 ## Development
 
-If you would like to contribute, please get involved with the [Islandora Fedora 4 Interest Group] We love to hear from you!
+If you would like to contribute, please get involved by attending our weekly [Tech Call](https://github.com/Islandora-CLAW/CLAW/wiki). We love to hear from you!
 
-If you would like to contribute code to the project, you need to be covered by an Islandora Foundation [Contributor License Agreement] or [Corporate Contributor License Agreement]. Please see the [Contributors] pages on Islandora.ca for more information.
+If you would like to contribute code to the project, you need to be covered by an Islandora Foundation [Contributor License Agreement](http://islandora.ca/sites/default/files/islandora_cla.pdf) or [Corporate Contributor Licencse Agreement](http://islandora.ca/sites/default/files/islandora_ccla.pdf). Please see the [Contributors](http://islandora.ca/resources/contributors) pages on Islandora.ca for more information.
 
 ## License
 
