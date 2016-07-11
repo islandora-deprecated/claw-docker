@@ -12,7 +12,7 @@ You **must** run the command ```git submodule update --init --recursive``` after
 
 The [Docker] images can be found in the [images](/images) directory.
 
-If your new to Docker, please read though our [overview](/docs/docker-overview.md), to get an idea of what Docker is all about.
+If you are new to Docker, please read though our [overview](/docs/docker-overview.md), to get an idea of what Docker is all about.
 
 ## Dependencies
 
