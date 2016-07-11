@@ -81,9 +81,9 @@ For convenience a number of commands are provided in the [commands](/commands) d
 | remove-stopped-containers | Removes stopped containers.                                                        |
 | remove-untagged-images    | Removes un-tagged images.                                                          |
 
-## Kernal Issues
+## Kernel Issues
 
-There are some know kernal issues that mess with the Java based images, If you experience troubles please review the and apply the provided workarounds:
+There are some known kernal issues that mess with the Java based images, If you experience troubles please review the and apply the provided workarounds:
 
 https://github.com/docker/docker/issues/18180
 
