@@ -32,11 +32,9 @@ Assumes you have already setup and installed [Docker](https://docs.docker.com/en
 1. `git clone https://github.com/Islandora-CLAW/claw-docker.git`
 2. `cd claw-docker`
 3. `cp example.docker-compose.yml docker-compose.yml` (edit `docker-compose.yml`)
-4. `git submodule update --init --recursive`
-5. `cd commands`
-6. `./generate-env-files`
-7. `sudo ./build`
-8. `sudo docker-compose up`
+4. `cd commands`
+5. `./generate-env-files`
+6. `sudo docker-compose up`
 
 ## Usage
 
