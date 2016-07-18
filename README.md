@@ -12,7 +12,7 @@ You **must** run the command ```git submodule update --init --recursive``` after
 
 The [Docker] images can be found in the [images](/images) directory.
 
-If your new to Docker, please read though our [overview](/docs/docker-overview.md), to get an idea of what Docker is all about.
+If you are new to Docker, please read though our [overview](/docs/docker-overview.md), to get an idea of what Docker is all about.
 
 ## Dependencies
 
@@ -31,12 +31,11 @@ Assumes you have already setup and installed [Docker](https://docs.docker.com/en
 
 1. `git clone https://github.com/Islandora-CLAW/claw-docker.git`
 2. `cd claw-docker`
-3. `cp example.docker-compose.yml docker-compose.yml` (edit `docker-compose.yml`)
-4. `git submodule update --init --recursive`
-5. `cd commands`
-6. `./generate-env-files`
-7. `sudo ./build`
-8. `sudo docker-compose up`
+3. `git submodule update --init --recursive`
+4. `cp example.docker-compose.yml docker-compose.yml` (edit `docker-compose.yml`)
+5. `sudo ./commands/generate-env-files`
+6. `sudo ./commands/build`
+7. `sudo docker-compose up`
 
 ## Usage
 
@@ -81,9 +80,9 @@ For convenience a number of commands are provided in the [commands](/commands) d
 | remove-stopped-containers | Removes stopped containers.                                                        |
 | remove-untagged-images    | Removes un-tagged images.                                                          |
 
-## Kernal Issues
+## Kernel Issues
 
-There are some know kernal issues that mess with the Java based images, If you experience troubles please review the and apply the provided workarounds:
+There are some known kernal issues that mess with the Java based images, If you experience troubles please review the and apply the provided workarounds:
 
 https://github.com/docker/docker/issues/18180
 
